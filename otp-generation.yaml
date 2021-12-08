@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otp-generation
+  namespace: interns-dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+      - name: otp-generation
+        image: spring-boot-docker.jar
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: otp-service
+  namespace: interns-dev
+spec:
+  type: NodePort
+#  replicas: 3
+  selector:
+    bb: web
+  ports:
+  - port: 9093
+    targetPort: 9093
+    nodePort: 30005

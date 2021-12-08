@@ -1,0 +1,19 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+  - name: otp-service
+    url: https://localhost:9099/api/v1/email
+    routes:
+      - name: otp-service-routes
+        paths:
+          - /api/v1/email
+        strip_path: true
+ 
+  - name: otp-service
+    url: https://localhost:9099/api/v1/otp-validate
+    routes:
+      - name: otp-service-routes
+        paths:
+          - /api/v1/otp-validate
+        strip_path: true

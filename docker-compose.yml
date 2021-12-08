@@ -1,0 +1,51 @@
+#version: '3.1'
+#services:
+#  API:
+#    image: 'spring-boot-docker.jar'
+#    ports:
+#      - "9093:9093"
+#    depends_on:
+#     - PostgreSQL
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/OtpProject
+#      - SPRING_DATASOURCE_USERNAME=postgres
+#      - SPRING_DATASOURCE_PASSWORD=root
+#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#     
+#  PostgreSQL:
+#    image: postgres
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      - POSTGRES_PASSWORD=root
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_DB=OtpProject
+#    healthcheck:
+#      test: [_format_version: "2.1"
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+
+#_transform: true
+#
+#services:
+#  - name: otp-service
+#    url: https://localhost:9093/api/v1/email
+#    routes:
+#      - name: otp-service-routes
+#        paths:
+#          - /api/v1/email
+#        strip_path: true
+# 
+#  - name: otp-service
+#    url: https://localhost:9093/api/v1/otp-validate
+#    routes:
+#      - name: otp-service-routes
+#        paths:
+#          - /api/v1/otp-validate
+#        strip_path: true"CMD-SHELL", "pg_isready -U postgres"]
+#        
+#        
+
+
+
